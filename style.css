@@ -1,0 +1,64 @@
+/* Basic CSS Styling */
+
+body {
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 10px 0 0 0;
+}
+
+canvas {
+  margin: 10px 0;
+}
+
+.filters button {
+  margin: 10px 0;
+}
+
+input[type="range"] {
+  margin: 0 0 10px 0;
+}
+
+.p {
+  padding-top: 50px;
+  clear: both;
+}
+
+#newbtn{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#resetbtn{
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.col-lg-6{
+	font-family: 'Indie Flower', cursive;
+}
+
+.button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+
+.pure-menu-heading {
+	font-family: 'Poiret One', cursive;
+	float: left;
+
+}
+
+.pure-menu{
+	background: rgb(66, 184, 221); /* this is a light blue */
+	padding-bottom: 13px;
+}
