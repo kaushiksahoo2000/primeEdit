@@ -37,6 +37,10 @@ options = {
 var selector = document.getElementById("selector");
 selector.addEventListener("change", handleFiles, false);
 
+$("#uploadbutton").on("click", function(){
+  selector.click();
+});
+
 function handleFiles() {
  var file = this.files[0];
  
