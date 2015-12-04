@@ -16,23 +16,44 @@ options = {
     extensions: ['.png', '.jpg'],
 };
 
-var button = Dropbox.createChooseButton(options);
-document.getElementById("dropbox-container").appendChild(button);
+// var button = Dropbox.createChooseButton(options);
+// document.getElementById("dropbox-container").appendChild(button);
 
-function add_img_to_list(file) {
-  var li  = document.createElement('li');
-  var a   = document.createElement('a');
-  a.href = file.link;
-  var img = new Image();
-  var src = file.thumbnailLink;
-  src = src.replace("bounding_box=75", "bounding_box=256");
-  src = src.replace("mode=fit", "mode=crop");
-  img.src = src;
-  img.className = "th"
-  document.getElementById("img_list").appendChild(li).appendChild(a).appendChild(img);
+// function add_img_to_list(file) {
+//   var li  = document.createElement('li');
+//   var a   = document.createElement('a');
+//   a.href = file.link;
+//   var img = new Image();
+//   var src = file.thumbnailLink;
+//   src = src.replace("bounding_box=75", "bounding_box=256");
+//   src = src.replace("mode=fit", "mode=crop");
+//   img.src = src;
+//   img.className = "th"
+//   document.getElementById("img_list").appendChild(li).appendChild(a).appendChild(img);
+// }
+
+
+
+var selector = document.getElementById("selector");
+selector.addEventListener("change", handleFiles, false);
+
+function handleFiles() {
+ var file = this.files[0];
+ 
+ var ctx = document.getElementById('canvas').getContext('2d');
+
+ var img = new Image;
+ img.onload = function() {
+    var ratio = img.width/img.height;
+    var x = 600;
+    var y = Math.floor(600*ratio);
+    canvas.width = y;
+    canvas.height = x;
+    ctx.drawImage(img, 0, 0, y, x);
+   URL.revokeObjectURL(img.src);
+ }
+ img.src = URL.createObjectURL(file);
 }
-
-
 
 
 $(function() {
